@@ -1,0 +1,10 @@
+---
+- hosts: all
+  remote_user: root
+  tasks:
+    - name: Deprovision hello world ansibleapp pods
+      shell: oc delete pods -l name=hello-openshift
+    - name: Deprovision hello world ansibleapp routes
+      shell: oc delete routes -l name=hello-openshift-route
+    - name: Deprovision hello world ansibleapp services
+      shell: oc delete services -l name=hello-openshift-svc

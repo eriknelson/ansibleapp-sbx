@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Route
+metadata:
+  name: hello-openshift-route
+  labels:
+    name: hello-openshift-route
+spec:
+  host: hello.cap.example.com
+  to:
+    kind: Service
+    name: hello-openshift-svc
